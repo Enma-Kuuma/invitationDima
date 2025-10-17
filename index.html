@@ -18,6 +18,7 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
+    letter-spacing: 1px; /* <- espacement ajouté */
   }
 
   body::before {
@@ -50,6 +51,7 @@
     font-size: 1.2rem;
     line-height: 1.6em;
     white-space: pre-line;
+    letter-spacing: 1px; /* <- espacement ajouté */
   }
 
   .btns {
@@ -97,7 +99,7 @@ let noCount = 0;
 // Texte initial
 const initialMessage = {
   text: "I know we don't really know each other yet, but I think we'd get along just fine.\n\nSo here's my official invitation: would you like to join me on WoW or any game we both play?\n\nClick your answer below!",
-  author: "me" // rouge
+  author: "me"
 };
 
 // Typing avec couleur selon l'auteur
@@ -105,7 +107,7 @@ function typeWriterColored(msgObj, callback) {
   messageBox.innerHTML = '';
   let i = 0;
   const speed = 30;
-  const color = msgObj.author === "me" ? "red" : "green"; // toi=rouge, lui=vert
+  const color = msgObj.author === "me" ? "red" : "green";
   function type() {
     if (i < msgObj.text.length) {
       messageBox.innerHTML += `<span style="color:${color}">${msgObj.text.charAt(i)}</span>`;
